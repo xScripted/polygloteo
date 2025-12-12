@@ -1,0 +1,32 @@
+:root {
+  --colorPrimary: #490e81;
+  --colorSecondary: #ffffff;
+  --colorAccent: rgb(191, 230, 222);
+  --colorNeutral: #f1ecf5;
+
+  --colorText: #222222;
+  --colorText2: #627472;
+  --colorText3: #f1f1f1;
+
+  --colorBorder: #ad9fbb;
+  --colorBlur: rgba(255, 255, 255, 0.8);
+  --colorError: #810e0e;
+
+  --radius: 10px;
+  --margin: 15px;
+  --fontPrimary: 'Indie Flower';
+  --fontSecondary: 'Outfit';
+  --breadcrumbsHeight: 110px;
+  font-size: 14px;
+}
+
+body.dark-mode {
+  --colorNeutral: #121212; // #282828
+  --colorSecondary: #282828;
+  --colorSecondary2: #3f3f3f;
+  --colorBlur: rgba(40, 40, 40, 0.8);
+  --colorBorder: rgba(255, 255, 255, 0.2);
+  --colorText: #f3f3f3;
+  --colorText2: #adadad;
+  --colorText3: #f1f1f1;
+}

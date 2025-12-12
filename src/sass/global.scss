@@ -1,0 +1,15 @@
+@use 'defaults.scss';
+@use 'variables.scss';
+@use 'mixins.scss' as *;
+
+.g-title {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.g-wrapper {
+  max-width: 1000px;
+  width: 100%;
+  padding: 0 20px;
+  margin: 0 auto;
+}

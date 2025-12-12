@@ -1,0 +1,3 @@
+export type SvgStore = {audio: string
+idea: string
+}

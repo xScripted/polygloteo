@@ -1,0 +1,7 @@
+{
+  "workbench.colorCustomizations": { "statusBar.background": "#2c484d", "statusBar.foreground": "#98a0c2" },
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[svelte]": { "editor.defaultFormatter": "svelte.svelte-vscode" },
+  "[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" }
+}
