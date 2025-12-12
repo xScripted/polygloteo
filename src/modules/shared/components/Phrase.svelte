@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Button from '@/modules/shared/components/Button.svelte'
+  import Svg from '@/modules/shared/components/Svg.svelte'
 
   let { phrase } = $props()
 
@@ -82,25 +82,26 @@
       justify-content: space-between;
       gap: 10px;
 
-      :global(button) {
-        padding: 10px;
-        min-height: 0;
-        border: 0 !important;
-      }
-
-      :global(button:hover svg) {
-        filter: grayscale(0) opacity(1);
-      }
-
-      :global(svg) {
-        width: 24px;
-        height: 24px;
-        filter: grayscale(1) opacity(0.5);
-        fill: var(--colorPrimary);
-      }
-
+      :global(svg),
       :global(path) {
-        stroke: var(--colorPrimary);
+        transition: 0.3s ease;
+        fill: var(--colorText2);
+        stroke: var(--colorText2);
+        border-radius: 5px;
+        padding: 5px;
+
+        box-shadow:
+          rgba(6, 24, 44, 0) 0px 0px 0px 2px,
+          rgba(6, 24, 44, 0) 0px 4px 6px -1px,
+          rgba(255, 255, 255, 0) 0px 1px 0px inset;
+      }
+
+      :global(svg:hover),
+      :global(path:hover) {
+        box-shadow:
+          rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+          rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+          rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
       }
     }
   }
@@ -118,7 +119,12 @@
   </div>
 
   <div class="buttons">
-    <Button icon="audio" click={() => play(phrase.target)} type="secondary" />
-    <Button icon="idea" click={() => (isHint = !isHint)} type="secondary" />
+    <button onclick={() => play(phrase.target)}>
+      <Svg name="audio" width="40" height="40" />
+    </button>
+
+    <button onclick={() => (isHint = !isHint)}>
+      <Svg name="idea" width="40" height="40" />
+    </button>
   </div>
 </div>

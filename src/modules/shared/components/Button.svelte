@@ -51,6 +51,11 @@
     white-space: nowrap;
     cursor: pointer;
 
+    box-shadow:
+      rgba(0, 0, 0, 0.4) 0px 2px 4px,
+      rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+      rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
     :global(*) {
       color: inherit;
     }
@@ -112,13 +117,10 @@
       }
 
       &:hover {
-        background-color: var(--colorSecondary);
-        color: var(--colorPrimary);
-
-        :global(svg) {
-          fill: var(--colorPrimary);
-          stroke: var(--colorPrimary);
-        }
+        box-shadow:
+          var(--colorOp05) 0px 2px 4px,
+          var(--colorOp03) 0px 7px 10px 0px,
+          rgba(0, 0, 0, 0.5) 0px -3px 0px inset;
       }
     }
 

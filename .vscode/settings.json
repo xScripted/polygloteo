@@ -3,5 +3,8 @@
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[svelte]": { "editor.defaultFormatter": "svelte.svelte-vscode" },
-  "[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" }
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "postman.settings.dotenv-detection-notification-visibility": false
 }
