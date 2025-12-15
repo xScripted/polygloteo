@@ -23,6 +23,12 @@
   )
 </script>
 
+<style>
+  :global(svg) {
+    flex-shrink: 0;
+  }
+</style>
+
 {#if SVG}
   {@html SVG}
 {/if}

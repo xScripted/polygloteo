@@ -24,6 +24,7 @@
 
 <svelte:head>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="icon" href="/assets/icon.png" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Outfit:wght@100..900&display=swap" rel="stylesheet" />
   <title>Polygloteo</title>

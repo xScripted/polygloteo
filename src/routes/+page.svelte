@@ -15,7 +15,14 @@
       flex-direction: column;
       justify-content: center;
       height: 100dvh;
+      gap: 20px;
       font-size: 20px;
+      margin-top: -70px;
+
+      img {
+        width: 200px;
+        height: 200px;
+      }
 
       .g-title {
         font-size: 50px;
@@ -30,7 +37,8 @@
 
 <div class="landing">
   <div class="text">
-    <h1 class="g-title">Aprende un idioma en 24 semanas</h1>
+    <img src="/assets/icon.png" alt="" />
+    <h1 class="g-title">Aprende un idioma sin darte cuenta</h1>
     <br />
     <Button click={() => goto('/dashboard')}>Comienza ahora</Button>
   </div>

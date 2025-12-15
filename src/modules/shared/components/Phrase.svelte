@@ -37,6 +37,7 @@
   .phrase {
     position: relative;
     padding: 10px;
+    width: fit-content;
     padding-top: 20px;
     border-radius: var(--radius);
     text-align: center;
@@ -62,7 +63,13 @@
     .target {
       transition: 0.3s ease;
       font-weight: bold;
-      font-size: 20px;
+      font-size: 18px;
+      padding: 0 20px;
+    }
+
+    p {
+      margin: 0;
+      padding: 5px;
     }
 
     .hint {
@@ -74,10 +81,11 @@
       text-align: center;
       width: 100%;
       opacity: 0;
+      font-size: 16px;
     }
 
     .buttons {
-      padding-top: 20px;
+      padding-top: 10px;
       display: flex;
       justify-content: space-between;
       gap: 10px;
