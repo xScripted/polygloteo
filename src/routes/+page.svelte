@@ -37,9 +37,10 @@
 
 <div class="landing">
   <div class="text">
+    <span>POLYGLOTEO</span>
     <img src="/assets/icon.png" alt="" />
     <h1 class="g-title">Aprende un idioma sin darte cuenta</h1>
     <br />
-    <Button click={() => goto('/dashboard')}>Comienza ahora</Button>
+    <Button click={() => goto('/login')}>Comienza ahora</Button>
   </div>
 </div>

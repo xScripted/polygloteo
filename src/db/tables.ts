@@ -10,6 +10,7 @@ export const User = pgTable('user', {
   email: text('email'),
   username: text('username'),
   resetToken: text('reset_token'),
+  avatar: text('avatar'),
   resetTokenExpiration: timestamp('reset_token_expiration', { withTimezone: true }),
   updatedAt: timestamp('updated_at', { withTimezone: true }).defaultNow(),
   deletedAt: timestamp('deleted_at', { withTimezone: true }),

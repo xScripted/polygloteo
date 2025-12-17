@@ -11,6 +11,7 @@ export interface Phrase {
 
 export const phrases = {
   goodAfternoon: {
+    key: 'goodAfternoon',
     translate: 'Buenas tardes',
     target: 'こんにちは。',
     targetHelper: 'こんにちは',
@@ -18,6 +19,7 @@ export const phrases = {
     tier: 1,
   },
   imVeryTired: {
+    key: 'imVeryTired',
     translate: 'Estoy muy cansado',
     target: 'めっちゃ疲れた。',
     targetHelper: 'めっちゃつかれた',
@@ -25,6 +27,7 @@ export const phrases = {
     tier: 1,
   },
   goodAfternoonImVeryTired: {
+    key: 'goodAfternoonImVeryTired',
     translate: 'Buenas tardes, estoy muy cansado',
     target: 'こんにちは。めっちゃ疲れた。',
     targetHelper: 'こんにちはめっちゃつかれた',
@@ -32,6 +35,7 @@ export const phrases = {
     tier: 1,
   },
   areYouOk: {
+    key: 'areYouOk',
     translate: '¿Te encuentras bien?',
     target: '大丈夫ですか？',
     targetHelper: 'だいじょうぶですか',
@@ -39,6 +43,7 @@ export const phrases = {
     tier: 1,
   },
   imOkCasual: {
+    key: 'imOkCasual',
     translate: 'Estoy bien',
     target: '大丈夫。',
     targetHelper: 'だいじょうぶ。',
@@ -46,7 +51,8 @@ export const phrases = {
     tier: 1,
   },
 
-  tiredFromTravelCasual: {
+  tiredFromTravel: {
+    key: 'tiredFromTravel',
     translate: 'Solo estoy cansado del viaje',
     target: '旅行で疲れただけ。',
     targetHelper: 'りょこうでつかれただけ。',
@@ -54,11 +60,12 @@ export const phrases = {
     tier: 1,
   },
 
-  needToFindHotelCasual: {
+  needToFindHotel: {
+    key: 'needToFindHotel',
     translate: 'Necesito encontrar un hotel',
-    target: 'ホテルを探さなきゃ。',
-    targetHelper: 'ホテルをさがさなきゃ。',
-    targetHelper2: 'Hoteru o sagasanakya.',
+    target: 'ホテルを見つける必要があります。',
+    targetHelper: 'ホテルをみつけるひつようがあります',
+    targetHelper2: 'Hoteru o mitsukeru hitsuyō ga arimasu.',
     tier: 1,
   },
 }

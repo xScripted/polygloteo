@@ -5,8 +5,22 @@
 
   let isHint: boolean = $state(false)
 
-  const play = async (text: string) => {
-    // Llamamos al endpoint SvelteKit que genera el audio
+  const play = async (text: string, key: string) => {
+    const localUrl = `/assets/audios/jp/${key}.mp3`
+
+    // 1️⃣ Comprobar si existe en assets
+    const exists = await fetch(localUrl, { method: 'HEAD' })
+      .then((res) => res.ok)
+      .catch(() => false)
+
+    // 2️⃣ Si existe → reproducir y salir
+    if (exists) {
+      const audio = new Audio(localUrl)
+      await audio.play()
+      return
+    }
+
+    // 3️⃣ Si NO existe → llamar a la API
     const res = await fetch('/api/text-to-speech', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -20,16 +34,27 @@
       return
     }
 
-    // Convertir base64 a Uint8Array
+    // Base64 → Uint8Array
     const audioArray = Uint8Array.from(atob(data.audio), (c) => c.charCodeAt(0))
 
-    // Crear blob y URL
     const blob = new Blob([audioArray], { type: 'audio/mp3' })
     const url = URL.createObjectURL(blob)
 
-    // Reproducir
     const audio = new Audio(url)
-    audio.play()
+
+    // ⬇️ Descargar SOLO si viene de la API
+    audio.addEventListener('ended', () => {
+      const a = document.createElement('a')
+      a.href = url
+      a.download = `${key}.mp3`
+      document.body.appendChild(a)
+      a.click()
+      document.body.removeChild(a)
+
+      URL.revokeObjectURL(url)
+    })
+
+    await audio.play()
   }
 </script>
 
@@ -39,16 +64,11 @@
     padding: 10px;
     width: fit-content;
     padding-top: 20px;
-    border-radius: var(--radius);
+    
     text-align: center;
-    background-color: white;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    box-shadow:
-      rgba(56, 0, 42, 0.4) 0px 2px 4px,
-      rgba(56, 0, 42, 0.3) 0px 7px 13px -3px,
-      rgba(56, 0, 42, 0.2) 0px -3px 0px inset;
 
     &.isHint {
       .hint {
@@ -115,7 +135,7 @@
   }
 </style>
 
-<div class="phrase" class:isHint>
+<div class="phrase g-box" class:isHint>
   <div class="target">
     <p>{phrase.target}</p>
     <p>{phrase.targetHelper}</p>
@@ -127,7 +147,7 @@
   </div>
 
   <div class="buttons">
-    <button onclick={() => play(phrase.target)}>
+    <button onclick={() => play(phrase.target, phrase.key)}>
       <Svg name="audio" width="40" height="40" />
     </button>
 

@@ -8,9 +8,31 @@
       completed: 300,
     },
   ])
+
+  let currentLang = $state('japan')
+
+  const swapFlag = (lang: string) => {
+    currentLang = lang
+  }
 </script>
 
 <style lang="scss">
+  .flags {
+    display: flex;
+    gap: 20px;
+
+    .flag {
+      transition: 0.3s ease;
+
+      &:hover {
+        transform: scale(0.9);
+      }
+      img {
+        width: 100px;
+      }
+    }
+  }
+
   .g-title {
     padding-top: 100px;
     padding-bottom: 20px;
@@ -49,6 +71,22 @@
 </style>
 
 <div class="g-wrapper">
+
+  
+  <p>Idioma activo: <span>Japonés</span></p>
+
+  <div class="flags">
+    <button class="flag" onclick={() => swapFlag('japan')}>
+      <img src="/assets/flags/japan.png" alt="" />
+    </button>
+
+    <button class="flag" onclick={() => swapFlag('france')}>
+      <img src="/assets/flags/france.png" alt="" />
+    </button>
+  </div>
+</div>
+
+<div class="g-wrapper">
   <h3 class="g-title">Capítulo 1 <span>El viaje empieza con mal pie</span></h3>
   <div class="history">
     <section class="chapter show">
@@ -81,10 +119,14 @@
 
       <p>Es tu oportunidad de explicarle tu problema y sacar tus habilidades con el Japonés a relucir.</p>
 
+      <p>
+        <span> No te abrumes, divide y vencerás. Si aprendes esto serás un 20% mas nativo.</span>
+      </p>
+
       <div class="phrases">
         <Phrase phrase={phrases.imOkCasual} />
-        <Phrase phrase={phrases.tiredFromTravelCasual} />
-        <Phrase phrase={phrases.needToFindHotelCasual} />
+        <Phrase phrase={phrases.tiredFromTravel} />
+        <Phrase phrase={phrases.needToFindHotel} />
       </div>
     </section>
   </div>

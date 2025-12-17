@@ -3,8 +3,19 @@
   import { page } from '$app/state'
   import { fade } from 'svelte/transition'
   import Menu from '@/modules/shared/components/Menu.svelte'
+  import { onMount } from 'svelte'
 
   let { children } = $props()
+
+  onMount(() => {
+    const darkMode = JSON.parse(localStorage.getItem('darkmode')) || false
+
+    if (darkMode) {
+      document.body.classList.add('dark-mode')
+    } else {
+      document.body.classList.remove('dark-mode')
+    }
+  })
 </script>
 
 <style lang="scss">
@@ -30,7 +41,9 @@
   <title>Polygloteo</title>
 </svelte:head>
 
-<Menu />
+{#if page.url.pathname.includes('/app')}
+  <Menu />
+{/if}
 
 {#key page.url.pathname}
   <main in:fade={{ delay: 300, duration: 200 }} out:fade={{ duration: 200 }}>

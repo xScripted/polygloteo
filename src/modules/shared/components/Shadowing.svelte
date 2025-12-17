@@ -103,13 +103,7 @@
       gap: 10px;
       padding: 20px;
       height: 80px;
-      border-radius: var(--radius);
       width: 100%;
-      background-color: white;
-      box-shadow:
-        rgba(56, 0, 42, 0.4) 0px 2px 4px,
-        rgba(56, 0, 42, 0.3) 0px 7px 13px -3px,
-        rgba(56, 0, 42, 0.2) 0px -3px 0px inset;
     }
 
     .success {
@@ -150,7 +144,7 @@
   <div class="translate">
     "{phrase.translate}"
   </div>
-  <button class="shadowing" onclick={recording ? stop : start}>
+  <button class="shadowing g-box" onclick={recording ? stop : start}>
     <Svg name={recording ? 'microphoneOff' : 'microphone'} />
     <div class="recordingText">{recording ? 'Hablando...' : 'Hablar'}</div>
     <div class="animate__animated success animate__{animation}">{msg}</div>

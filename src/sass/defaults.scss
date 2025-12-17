@@ -73,6 +73,7 @@ button {
 
 input {
   background-color: unset;
+  outline: none;
 }
 
 input[type='checkbox'] {
@@ -90,8 +91,9 @@ input[type='date'] {
 
 hr {
   border: 0;
+  width: 100%;
   border-bottom: 1px solid var(--colorBorder);
-  margin: 25px 0;
+  margin: 15px 0;
 }
 
 ::-webkit-scrollbar {
