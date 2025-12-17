@@ -15,6 +15,13 @@
       "when": 1765981912366,
       "tag": "0001_lively_scourge",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1766011842377,
+      "tag": "0002_mysterious_fabian_cortez",
+      "breakpoints": true
     }
   ]
 }

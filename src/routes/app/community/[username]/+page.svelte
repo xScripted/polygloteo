@@ -37,6 +37,7 @@
       height: 200px;
       border-radius: var(--radius);
       object-fit: cover;
+      padding: 0;
     }
   }
 </style>

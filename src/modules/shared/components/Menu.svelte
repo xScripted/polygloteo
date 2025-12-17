@@ -7,18 +7,21 @@
       href: '/app',
     },
     {
-      label: 'Comunidad',
-      href: '/app/community',
+      label: 'Capítulos',
+      href: '/app/chapters',
     },
+
     {
       label: 'Biblioteca',
       href: '/app/library',
     },
+    {
+      label: 'Comunidad',
+      href: '/app/community',
+    },
   ]
 
   const user = $derived(page.data.user)
-
-  console.log(user)
 </script>
 
 <style lang="scss">
@@ -52,6 +55,7 @@
         display: flex;
         align-items: center;
         gap: 10px;
+        font-size: 16px;
       }
 
       ul {

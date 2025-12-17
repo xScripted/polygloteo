@@ -3,8 +3,10 @@
 @use 'mixins.scss' as *;
 
 .g-title {
-  font-size: 30px;
+  font-size: 40px;
+  padding-top: 20px;
   font-weight: bold;
+  text-align: center;
 
   span {
     display: block;
@@ -14,7 +16,7 @@
 }
 
 .g-wrapper {
-  max-width: 900px;
+  max-width: 1200px;
   width: 100%;
   padding: 0 20px;
   margin: 0 auto;

@@ -3,10 +3,6 @@
 </script>
 
 <style lang="scss">
-  .g-title {
-    padding-top: 50px;
-    text-align: center;
-  }
 </style>
 
 <div class="g-wrapper">

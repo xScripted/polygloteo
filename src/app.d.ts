@@ -11,6 +11,7 @@ declare global {
         surname: string
         email: string
         avatar: string | null
+        streak: number
       } | null
     }
     interface PageData {

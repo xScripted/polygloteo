@@ -3,26 +3,25 @@
 </script>
 
 <style lang="scss">
-  .g-title {
-    padding-top: 50px;
-    text-align: center;
-  }
-
   .users {
     padding: 20px 0;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
 
     .user {
       transition: 0.3s ease-out;
       padding: 20px;
       display: flex;
       align-items: center;
+      justify-content: space-between;
       gap: 20px;
 
-      &:hover {
-        transform: translateX(10px);
+      .left,
+      .right {
+        display: flex;
+        align-items: center;
+        gap: 20px;
       }
 
       .username {
@@ -31,9 +30,10 @@
       }
 
       img {
-        width: 50px;
-        height: 50px;
+        width: 100px;
+        height: 100px;
         object-fit: cover;
+        border-radius: var(--radius);
       }
     }
   }
@@ -44,10 +44,16 @@
 
   <div class="users">
     {#each data.users as user}
-      <a href={`/app/community/${user.username}`} class="g-box user">
-        <img class="avatar" src={user.avatar || '/assets/cute.png'} alt="" />
-        <span class="username">{user.username}</span>
-      </a>
+      <div class="g-box user">
+        <div class="left">
+          <img class="avatar" src={user.avatar || '/assets/cute.png'} alt="" />
+          <span class="username">{user.username}</span>
+        </div>
+
+        <div class="right">
+          <span class="streak">🔥 {user.streak || 0}</span>
+        </div>
+      </div>
     {/each}
   </div>
 </div>
