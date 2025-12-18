@@ -42,16 +42,14 @@
   }
 </style>
 
-<div class="g-wrapper">
-  <div class="profile">
-    <img class="g-box" src={user?.avatar || '/assets/cute.png'} alt="" />
-    <h1>{user?.username}</h1>
+<div class="profile">
+  <img class="g-box" src={user?.avatar || '/assets/cute.png'} alt="" />
+  <h1>{user?.username}</h1>
 
-    <Button click={toggleDarkmode}>Darkmode</Button>
+  <Button click={toggleDarkmode}>Darkmode</Button>
 
-    <br />
-    <button onclick={logout}>
-      <span>Logout</span>
-    </button>
-  </div>
+  <br />
+  <button onclick={logout}>
+    <span>Logout</span>
+  </button>
 </div>

@@ -34,7 +34,7 @@
 </script>
 
 <style lang="scss">
-  .g-wrapper {
+  .register-page {
     position: relative;
     display: flex;
     align-items: center;
@@ -98,7 +98,7 @@
   }
 </style>
 
-<div class="g-wrapper">
+<div class="register-page">
   <div class="container">
     <img class="cute" src="/assets/cute.png" alt="" />
     <div class="register g-box">

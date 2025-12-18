@@ -46,7 +46,7 @@
 {/if}
 
 {#key page.url.pathname}
-  <main in:fade={{ delay: 300, duration: 200 }} out:fade={{ duration: 200 }}>
+  <main class="g-wrapper" in:fade={{ delay: 300, duration: 200 }} out:fade={{ duration: 200 }}>
     {@render children()}
   </main>
 {/key}

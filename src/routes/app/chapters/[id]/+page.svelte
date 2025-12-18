@@ -14,9 +14,7 @@
   }
 </style>
 
-<div class="g-wrapper">
-  <h1 class="g-title">{chapter?.title}</h1>
-  <div class="chapter">
-    {chapter?.title}
-  </div>
+<h1 class="g-title">{chapter?.title}</h1>
+<div class="chapter">
+  {chapter?.title}
 </div>

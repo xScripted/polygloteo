@@ -28,7 +28,7 @@
 </script>
 
 <style lang="scss">
-  .g-wrapper {
+  .login-page {
     position: relative;
     display: flex;
     align-items: center;
@@ -92,7 +92,7 @@
   }
 </style>
 
-<div class="g-wrapper">
+<div class="login-page">
   <div class="container">
     <img class="cute" src="/assets/cute.png" alt="" />
     <div class="login g-box">

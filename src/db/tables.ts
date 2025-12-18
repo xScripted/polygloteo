@@ -1,6 +1,4 @@
-// tables.ts — PostgreSQL + Drizzle
-import { index } from 'drizzle-orm/gel-core'
-import { pgTable, text, integer, boolean, jsonb, timestamp, serial, doublePrecision, primaryKey, vector } from 'drizzle-orm/pg-core'
+import { pgTable, text, integer, jsonb, timestamp } from 'drizzle-orm/pg-core'
 
 export const User = pgTable('user', {
   id: text('id').primaryKey().notNull(), // si quieres, cambia a uuid('id').defaultRandom()
@@ -14,9 +12,9 @@ export const User = pgTable('user', {
   streak: integer('streak').default(0),
   chapters: jsonb('chapters').default([]),
   phrases: jsonb('phrases').default([]),
+  lastConnection: timestamp('last_connection', { withTimezone: true }).defaultNow(),
   resetTokenExpiration: timestamp('reset_token_expiration', { withTimezone: true }),
   updatedAt: timestamp('updated_at', { withTimezone: true }).defaultNow(),
-  deletedAt: timestamp('deleted_at', { withTimezone: true }),
 })
 
 export const Session = pgTable('session', {

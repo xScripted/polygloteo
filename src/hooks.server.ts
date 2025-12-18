@@ -22,6 +22,8 @@ export const handle: Handle = async ({ event, resolve }) => {
         .limit(1)
         .then((r) => r[0])
 
+      const today = new Date()
+
       if (user) {
         event.locals.user = user
       }
