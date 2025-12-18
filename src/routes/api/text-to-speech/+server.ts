@@ -2,11 +2,12 @@
 import { json } from '@sveltejs/kit'
 import fetch from 'node-fetch'
 import { GoogleAuth } from 'google-auth-library'
+import { LANGS } from '@/modules/shared/constants/langs'
 
 const KEY_FILE = './credentials.json' // ruta a tu JSON
 
 export const POST = async ({ request }) => {
-  const { text } = await request.json()
+  const { text, lang } = await request.json()
 
   // Crear cliente de autenticación
   const auth = new GoogleAuth({
@@ -21,9 +22,12 @@ export const POST = async ({ request }) => {
   const url = 'https://texttospeech.googleapis.com/v1/text:synthesize'
 
   // Body de la petición
+
+  const voice = lang === LANGS.FRENCH ? { languageCode: 'fr-FR', name: 'fr-FR-Wavenet-A' } : { languageCode: 'ja-JP', name: 'ja-JP-Wavenet-A' }
+
   const body = {
     input: { text },
-    voice: { languageCode: 'ja-JP', name: 'ja-JP-Wavenet-A' }, // voz japonesa
+    voice,
     audioConfig: { audioEncoding: 'MP3', speakingRate: 0.8 },
   }
 

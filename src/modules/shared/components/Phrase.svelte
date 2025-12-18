@@ -1,5 +1,6 @@
 <script lang="ts">
   import Svg from '@/modules/shared/components/Svg.svelte'
+  import { selectedLang } from '@/store'
 
   let { phrase } = $props()
 
@@ -24,7 +25,7 @@
     const res = await fetch('/api/text-to-speech', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ text }),
+      body: JSON.stringify({ text, lang: $selectedLang }),
     })
 
     const data = await res.json()
@@ -64,7 +65,7 @@
     padding: 10px;
     width: fit-content;
     padding-top: 20px;
-    
+
     text-align: center;
     display: flex;
     flex-direction: column;

@@ -1,9 +1,12 @@
 <script lang="ts">
   import { untrack } from 'svelte'
+  import { selectedLang } from '@/store'
   import Svg from '@/modules/shared/components/Svg.svelte'
   import { similarityScore } from '@/modules/shared/scripts/similarityScore'
 
   let { phrase, energyBar = $bindable(0) } = $props()
+
+  $selectedLang
 
   let recording: boolean = $state(false)
   let mediaRecorder: MediaRecorder
@@ -31,6 +34,7 @@
 
       const formData = new FormData()
       formData.append('audio', webm, 'audio.webm')
+      formData.append('lang', $selectedLang)
 
       const res = await fetch('/api/speech-to-text', {
         method: 'POST',

@@ -10,6 +10,9 @@ export const load = async () => {
       email: User.email,
       username: User.username,
       avatar: User.avatar,
+      lastConnection: User.lastConnection,
+      phrases: User.phrases,
+      chapters: User.chapters,
     })
     .from(User)
 

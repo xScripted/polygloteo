@@ -1,5 +1,6 @@
 <script lang="ts">
   import { selectedLang } from '@/store'
+  import { LANGS } from '@/modules/shared/constants/langs'
 
   const swapFlag = (lang: string) => {
     $selectedLang = lang
@@ -8,7 +9,7 @@
   }
 
   $effect(() => {
-    $selectedLang = localStorage.getItem('activeLang') || 'japan'
+    $selectedLang = localStorage.getItem('activeLang') || LANGS.JAPANESE
   })
 </script>
 
@@ -42,11 +43,11 @@
 </style>
 
 <div class="flags">
-  <button class="flag" onclick={() => swapFlag('japan')} class:active={$selectedLang === 'japan'}>
+  <button class="flag" onclick={() => swapFlag(LANGS.JAPANESE)} class:active={$selectedLang === LANGS.JAPANESE}>
     <img src="/assets/flags/japan.png" alt="" />
   </button>
 
-  <button class="flag" onclick={() => swapFlag('france')} class:active={$selectedLang === 'france'}>
+  <button class="flag" onclick={() => swapFlag(LANGS.FRENCH)} class:active={$selectedLang === LANGS.FRENCH}>
     <img src="/assets/flags/france.png" alt="" />
   </button>
 </div>

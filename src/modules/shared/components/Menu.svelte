@@ -64,6 +64,7 @@
         align-items: center;
 
         a {
+          transition: 0.3s ease;
           display: flex;
           height: 100%;
           align-items: center;

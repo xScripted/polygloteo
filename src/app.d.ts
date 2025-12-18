@@ -12,6 +12,7 @@ declare global {
         email: string
         avatar: string | null
         streak: number
+        lastConnection: string
       } | null
     }
     interface PageData {

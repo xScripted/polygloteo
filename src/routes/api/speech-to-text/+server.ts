@@ -1,12 +1,14 @@
 import { json } from '@sveltejs/kit'
 import fetch from 'node-fetch'
 import { GoogleAuth } from 'google-auth-library'
+import { LANGS } from '@/modules/shared/constants/langs'
 
 const KEY_FILE = './credentials.json'
 
 export const POST = async ({ request }) => {
   const form = await request.formData()
   const file = form.get('audio') as File
+  const lang = form.get('lang') as string
 
   if (!file) {
     return json({ error: 'No se recibió archivo de audio' }, { status: 400 })
@@ -27,7 +29,7 @@ export const POST = async ({ request }) => {
   const body = {
     config: {
       encoding: 'WEBM_OPUS',
-      languageCode: 'ja-JP',
+      languageCode: lang === LANGS.JAPANESE ? 'ja-JP' : 'fr-FR',
       enableAutomaticPunctuation: true,
     },
     audio: { content: buffer.toString('base64') },

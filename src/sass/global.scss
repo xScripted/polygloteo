@@ -16,7 +16,7 @@
 }
 
 .g-wrapper {
-  max-width: 1200px;
+  max-width: 900px;
   width: 100%;
   padding: 0 20px;
   margin: 0 auto;
@@ -48,4 +48,10 @@ input {
 
 span {
   color: var(--colorText2);
+}
+
+.chapter-component {
+  p {
+    font-size: 18px;
+  }
 }

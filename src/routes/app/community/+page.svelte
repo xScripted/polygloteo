@@ -1,5 +1,17 @@
 <script lang="ts">
   let { data } = $props()
+
+  const formatDate = (date: string | Date | null) => {
+    if (!date) return 'Nunca'
+    const d = new Date(date)
+    const day = d.getDate().toString().padStart(2, '0')
+    const month = (d.getMonth() + 1).toString().padStart(2, '0')
+    const year = d.getFullYear().toString().slice(-2)
+    const hours = d.getHours().toString().padStart(2, '0')
+    const minutes = d.getMinutes().toString().padStart(2, '0')
+
+    return `${day}/${month}/${year} ${hours}:${minutes}`
+  }
 </script>
 
 <style lang="scss">
@@ -42,6 +54,11 @@
             }
           }
         }
+
+        .last {
+          width: 100px;
+          text-align: center;
+        }
       }
 
       .username {
@@ -75,18 +92,19 @@
             <img src="/assets/flags/japan.png" alt="" />
 
             <div class="item">Capítulos:</div>
-            <div class="item">Frases aprendidas:</div>
+            <div class="item">Frases:</div>
           </div>
 
           <div class="lang">
             <img src="/assets/flags/france.png" alt="" />
 
             <div class="item">Capítulos:</div>
-            <div class="item">Frases aprendidas:</div>
+            <div class="item">Frases:</div>
           </div>
         </div>
 
         <span class="streak">🔥 {user.streak || 0}</span>
+        <span class="last">{formatDate(user.lastConnection)}</span>
       </div>
     </div>
   {/each}
