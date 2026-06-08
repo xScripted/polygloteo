@@ -12,6 +12,7 @@ export const load = async () => {
       avatar: User.avatar,
       lastConnection: User.lastConnection,
       phrases: User.phrases,
+      streak: User.streak,
       chapters: User.chapters,
     })
     .from(User)

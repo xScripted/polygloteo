@@ -2,17 +2,22 @@
 @use 'variables.scss';
 @use 'mixins.scss' as *;
 
-.g-title {
+h1 {
   font-size: 40px;
   padding-top: 20px;
-  font-weight: bold;
   text-align: center;
 
   span {
-    display: block;
-    font-size: 25px;
     color: var(--colorPrimary);
   }
+}
+
+h2 {
+  font-size: 30px;
+  padding-top: 20px;
+  font-weight: bold;
+  text-align: center;
+  color: var(--colorText2);
 }
 
 .g-wrapper {

@@ -33,7 +33,7 @@ export const handle: Handle = async ({ event, resolve }) => {
           const yesterday = new Date(now)
           yesterday.setDate(now.getDate() - 1)
 
-          let newStreak = 0
+          let newStreak = 1
           if (last && isSameDay(last, yesterday)) {
             newStreak = (user.streak ?? 0) + 1
           }
